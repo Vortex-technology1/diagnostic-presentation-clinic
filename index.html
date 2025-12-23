@@ -85,6 +85,49 @@
             background: rgba(34, 197, 94, 0.1);
         }
 
+        /* Tools Sub-Navigation */
+        .tools-nav {
+            position: fixed;
+            top: 52px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(10, 15, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            z-index: 99;
+            flex-wrap: wrap;
+        }
+
+        .tools-nav-label {
+            color: var(--text-gray);
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .tools-nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tools-nav a:hover {
+            color: var(--primary);
+            background: rgba(34, 197, 94, 0.2);
+            border-color: var(--primary);
+        }
+
         /* Slides container */
         .slides-container {
             position: relative;
@@ -97,7 +140,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 6rem 2rem 4rem;
+            padding: 8rem 2rem 4rem;
             opacity: 1;
         }
 
@@ -6319,6 +6362,38 @@
             width: 100%;
             max-width: 100%;
         }
+
+        /* Pain consequences styles */
+        .pain-consequences {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #ef4444;
+        }
+        
+        .pain-item svg {
+            width: 18px;
+            height: 18px;
+            color: #ef4444;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .pain-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -6330,11 +6405,27 @@
         <a href="#pains-check">Болі</a>
         <a href="#functions">Функції</a>
         <a href="#metrics-1">Метрики</a>
-        <a href="#tools">Інструменти</a>
+        <a href="#product-process">Інструменти</a>
         <a href="#planning">Планування</a>
         <a href="#platform">Модулі</a>
         <a href="#objections">Заперечення</a>
         <a href="#summary">Підсумок</a>
+    </nav>
+
+    <!-- Tools Sub-Navigation -->
+    <nav class="tools-nav">
+        <span class="tools-nav-label">Інструменти:</span>
+        <a href="#product-process">#1</a>
+        <a href="#functions">#2</a>
+        <a href="#next-tool">#3</a>
+        <a href="#bottleneck">#4</a>
+        <a href="#planning">#5</a>
+        <a href="#task-tech">#6</a>
+        <a href="#delegation">#7</a>
+        <a href="#coordination">#8</a>
+        <a href="#finance">#9</a>
+        <a href="#marketing">#10</a>
+        <a href="#sales">#11</a>
     </nav>
 
     <div class="slides-container">
@@ -6552,9 +6643,11 @@
         <section class="slide" id="product-process">
             <span class="slide-number">05 / 39</span>
 
-            <h2 class="section-title">Ключова помилка: <span class="highlight">процес ≠ продукт</span></h2>
-
-            <p class="section-text">У більшості медичних компаній продукт плутають із процесом.</p>
+            <div class="next-tool-intro">
+                <span class="tool-badge">Інструмент #1</span>
+                <h2 class="section-title">Ключова помилка: <span class="highlight">процес ≠ продукт</span></h2>
+                <p class="section-text">У більшості медичних компаній продукт плутають із процесом.</p>
+            </div>
 
             <div class="comparison-block">
                 <div class="comparison-wrong">
@@ -7003,16 +7096,16 @@
                     <!-- Level 4 -->
                     <div class="org-level four-col">
                         <div class="org-node small">
-                            <span>Бригадир</span>
+                            <span>Лікар</span>
                         </div>
                         <div class="org-node small">
-                            <span>Комірник</span>
+                            <span>Медсестра</span>
                         </div>
                         <div class="org-node small">
-                            <span>Оператор</span>
+                            <span>Адмін</span>
                         </div>
                         <div class="org-node small">
-                            <span>Пакувальник</span>
+                            <span>Асистент</span>
                         </div>
                     </div>
                 </div>
@@ -7048,20 +7141,21 @@
         <section class="slide" id="functions">
             <span class="slide-number">11 / 39</span>
 
-            <div class="solution-badge">Рішення</div>
+            <div class="next-tool-intro">
+                <span class="tool-badge">Інструмент #2</span>
+                <h2 class="section-title">18 функцій, які <span class="highlight">тримають клініку</span></h2>
+                <p class="section-text">Кожна функція — це "місце, де може зламатись". Немає функції → є проблема.</p>
+            </div>
 
-            <h2 class="section-title">Функції, які <span class="highlight">тримають клініка</span></h2>
-            <p class="section-text">Кожна функція — це "місце, де ламається". Немає функції → є проблема.</p>
-
-            <!-- Виробничі функції - частина 1 -->
+            <!-- Клінічні функції -->
             <div class="functions-section">
                 <div class="functions-header operational">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                     </svg>
                     <div>
                         <h3>Клінічні функції</h3>
-                        <span>Від звернення до завершеного лікування</span>
+                        <span>Від дзвінка пацієнта до завершеного лікування</span>
                     </div>
                 </div>
 
@@ -7070,16 +7164,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">01</span>
-                            <h4>Перевірка реальності пацієнти</h4>
+                            <h4>Прийом дзвінка та запис</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Роблять те, що неможливо змонтувати</p>
+                                <p>Пропущені дзвінки, пацієнт пішов до конкурента</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Переробки і втрати</span>
+                                <span>Втрата первинних пацієнтів</span>
                             </div>
                         </div>
                     </div>
@@ -7088,16 +7182,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">02</span>
-                            <h4>Другий перегляд заміру</h4>
+                            <h4>Первинна консультація</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Один кривий замір губить все пацієнти</p>
+                                <p>Пацієнт не розуміє план і ціну, йде "подумати"</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Виріб під ніж</span>
+                                <span>Низька конверсія в лікування</span>
                             </div>
                         </div>
                     </div>
@@ -7106,16 +7200,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">03</span>
-                            <h4>Розбиття на детальні частини</h4>
+                            <h4>Діагностика та план лікування</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Кожен майстер робить "як зрозумів"</p>
+                                <p>Кожен лікар по-своєму, різні ціни на одне й те ж</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Різний результат і брак</span>
+                                <span>Хаос і недовіра пацієнтів</span>
                             </div>
                         </div>
                     </div>
@@ -7124,16 +7218,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">04</span>
-                            <h4>Черговість робіт (хто після кого)</h4>
+                            <h4>Підготовка кабінету до прийому</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Операції плутаються</p>
+                                <p>Лікар чекає матеріали, асистент біжить шукати</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Затримки і хаос у відділенняу</span>
+                                <span>Затримки, нервування, менше прийомів</span>
                             </div>
                         </div>
                     </div>
@@ -7142,16 +7236,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">05</span>
-                            <h4>Комплектність перед стартом</h4>
+                            <h4>Проведення процедури</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Щось забули купити/взяти</p>
+                                <p>Немає стандартів — кожен робить по-своєму</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Виробництво стоїть</span>
+                                <span>Різна якість, скарги, переробки</span>
                             </div>
                         </div>
                     </div>
@@ -7160,16 +7254,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">06</span>
-                            <h4>Підготовка до процедури</h4>
+                            <h4>Оформлення документації</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Матеріали не готові, аналізи не зібрані</p>
+                                <p>Карти не заповнені, історія втрачена</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Процедура переноситься</span>
+                                <span>Юридичні ризики, хаос на повторних</span>
                             </div>
                         </div>
                     </div>
@@ -7178,16 +7272,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">07</span>
-                            <h4>Фіксація змін по замовленню</h4>
+                            <h4>Розрахунок пацієнта</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Менеджер змінив — відділення не знає</p>
+                                <p>Плутанина з цінами, знижками, оплатами</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Роблять стару версію → брак</span>
+                                <span>Недоотримані гроші, конфлікти</span>
                             </div>
                         </div>
                     </div>
@@ -7196,16 +7290,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">08</span>
-                            <h4>Перевірка габаритів доставки</h4>
+                            <h4>Запис на наступний візит</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Виріб не заходить у двері/ліфт</p>
+                                <p>Пацієнт пішов і забув записатись</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Переробка за свій рахунок</span>
+                                <span>Втрата повторних, незавершене лікування</span>
                             </div>
                         </div>
                     </div>
@@ -7214,16 +7308,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">09</span>
-                            <h4>Планування завантаження відділенняу</h4>
+                            <h4>Нагадування про візит</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Сьогодні пусто, завтра завал</p>
+                                <p>Пацієнти не приходять, пусті слоти</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Зриви термінів</span>
+                                <span>15-20% неявки, втрата доходу</span>
                             </div>
                         </div>
                     </div>
@@ -7232,16 +7326,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">10</span>
-                            <h4>Координація менеджер-технолог-відділення</h4>
+                            <h4>Контроль якості лікування</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Кожен по-своєму, інформація губиться</p>
+                                <p>Проблеми бачать тільки коли скаржиться пацієнт</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Косяки на переходах</span>
+                                <span>Переробки за свій рахунок, репутація</span>
                             </div>
                         </div>
                     </div>
@@ -7250,16 +7344,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">11</span>
-                            <h4>Перевірка якості на кожному етапі</h4>
+                            <h4>Робота зі скаргами</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Проблеми бачать тільки в кінці</p>
+                                <p>Скарги ігноруються або ескалюються до власника</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Масові переробки</span>
+                                <span>Негативні відгуки, судові позови</span>
                             </div>
                         </div>
                     </div>
@@ -7268,16 +7362,16 @@
                     <div class="function-consequence-card">
                         <div class="fc-header">
                             <span class="fc-number">12</span>
-                            <h4>Розбір причин браку</h4>
+                            <h4>Повернення "сплячих" пацієнтів</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Помилки повторюються роками</p>
+                                <p>Пацієнти, які не прийшли — забуті назавжди</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Постійні втрати грошей</span>
+                                <span>Постійно шукаємо нових замість повернути старих</span>
                             </div>
                         </div>
                     </div>
@@ -7298,7 +7392,7 @@
                     </svg>
                     <div>
                         <h3>Управлінські функції</h3>
-                        <span>Те, що <strong class="highlight-red">ніхто не виділяє</strong>, але без чого все розвалюється</span>
+                        <span>Те, що <strong class="highlight-red">ніхто не виділяє</strong>, але без чого клініка розвалюється</span>
                     </div>
                 </div>
 
@@ -7316,16 +7410,16 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">13</span>
-                            <h4>Контроль виконання задач</h4>
+                            <h4>Планування розкладу лікарів</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Задачі "висять", дедлайни зриваються</p>
+                                <p>Одні перевантажені, інші сидять без пацієнтів</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Робота рухається тільки під тиском власника</span>
+                                <span>Втрата грошей на простої</span>
                             </div>
                         </div>
                     </div>
@@ -7334,12 +7428,12 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">14</span>
-                            <h4>Щоденні планерки</h4>
+                            <h4>Щоденні планерки команди</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Дрібні питання ростуть у пожежі</p>
+                                <p>Дрібні питання ростуть у великі проблеми</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
@@ -7352,16 +7446,16 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">15</span>
-                            <h4>Найм і введення в посаду</h4>
+                            <h4>Найм та адаптація персоналу</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Новачки довго адаптуються, вакансії місяцями</p>
+                                <p>Вакансії місяцями, новачки тонуть</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Навантаження на ключових людей</span>
+                                <span>Навантаження на "зірок", вигорання</span>
                             </div>
                         </div>
                     </div>
@@ -7370,16 +7464,16 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">16</span>
-                            <h4>Облік і звітність</h4>
+                            <h4>Фінансовий облік та аналітика</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Не бачите, де клініка ламається</p>
+                                <p>Не знаєте рентабельність послуг і лікарів</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Рішення "на око", а не по фактах</span>
+                                <span>Рішення "на око", гроші витікають</span>
                             </div>
                         </div>
                     </div>
@@ -7388,16 +7482,16 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">17</span>
-                            <h4>Планування розкладу</h4>
+                            <h4>Закупівля матеріалів</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Терміни не стикаються, загрузка хаотична</p>
+                                <p>Матеріали закінчуються посеред прийому</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Зриви дедлайнів, втрата пацієнтів</span>
+                                <span>Зупинки, заморожені гроші в залишках</span>
                             </div>
                         </div>
                     </div>
@@ -7406,16 +7500,16 @@
                     <div class="function-consequence-card mgmt">
                         <div class="fc-header">
                             <span class="fc-number">18</span>
-                            <h4>Закупівлі та запаси</h4>
+                            <h4>Маркетинг та залучення пацієнтів</h4>
                         </div>
                         <div class="fc-body">
                             <div class="fc-when-missing">
                                 <span class="fc-label">Коли немає:</span>
-                                <p>Матеріали закінчуються в найгірший момент</p>
+                                <p>Пацієнти тільки за рекомендаціями, нема росту</p>
                             </div>
                             <div class="fc-consequence">
                                 <span class="fc-arrow">→</span>
-                                <span>Зупинки + заморожені гроші</span>
+                                <span>Залежність від "сарафана", стагнація</span>
                             </div>
                         </div>
                     </div>
@@ -7433,9 +7527,9 @@
                 </div>
                 <div class="problem-content">
                     <h4>Чому це важливо?</h4>
-                    <p>Виробничі функції (1-12) — це <strong>"місця, де ламається"</strong>.</p>
-                    <p>Управлінські функції (13-18) — це <strong>"місця, які тримають"</strong>.</p>
-                    <p class="highlight-text">Разом вони формують повну функціональну оргструктуру клініки.</p>
+                    <p>Клінічні функції (1-12) — це <strong>"шлях пацієнта"</strong>: від дзвінка до результату.</p>
+                    <p>Управлінські функції (13-18) — це <strong>"фундамент"</strong>: те, що тримає все разом.</p>
+                    <p class="highlight-text">Разом вони формують повну систему роботи клініки.</p>
                 </div>
             </div>
         </section>
@@ -7612,7 +7706,7 @@
             <span class="slide-number">15 / 39</span>
 
             <div class="next-tool-intro">
-                <span class="tool-badge">Інструмент #2</span>
+                <span class="tool-badge">Інструмент #3</span>
                 <h2 class="section-title">Навик <span class="highlight">Формування Результату</span></h2>
                 <p class="section-text">Одне діло — визначити функцію. Інше — навчитися мислити результатом.</p>
             </div>
@@ -8081,29 +8175,29 @@
             <div class="bottleneck-visual">
                 <div class="bottleneck-flow">
                     <div class="flow-stage">
-                        <span class="flow-label">Продажі</span>
+                        <span class="flow-label">Дзвінок</span>
                         <div class="flow-bar" style="width: 100%;">100%</div>
                     </div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-stage">
-                        <span class="flow-label">Заміри</span>
-                        <div class="flow-bar" style="width: 90%;">90%</div>
+                        <span class="flow-label">Запис</span>
+                        <div class="flow-bar" style="width: 85%;">85%</div>
                     </div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-stage bottleneck">
-                        <span class="flow-label">Техвідділ</span>
+                        <span class="flow-label">Консультація</span>
                         <div class="flow-bar warning" style="width: 60%;">60%</div>
                         <span class="bottleneck-marker">← Вузьке місце</span>
                     </div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-stage">
-                        <span class="flow-label">Виробництво</span>
-                        <div class="flow-bar" style="width: 55%;">55%</div>
+                        <span class="flow-label">Лікування</span>
+                        <div class="flow-bar" style="width: 50%;">50%</div>
                     </div>
                     <div class="flow-arrow">→</div>
                     <div class="flow-stage">
-                        <span class="flow-label">Монтаж</span>
-                        <div class="flow-bar" style="width: 50%;">50%</div>
+                        <span class="flow-label">Повторний</span>
+                        <div class="flow-bar" style="width: 35%;">35%</div>
                     </div>
                 </div>
             </div>
@@ -8161,7 +8255,7 @@
             <div class="next-tool-intro">
                 <span class="tool-badge">Інструмент #5</span>
                 <h2 class="section-title">Система <span class="highlight">планування</span></h2>
-                <p class="section-text">Як хаотичне клініка перетворити на керований процес</p>
+                <p class="section-text">Як хаотичну клініку перетворити на керований процес</p>
             </div>
 
             <div class="planning-scenario">
@@ -8202,14 +8296,14 @@
                         <span class="step-num">1</span>
                         <div>
                             <strong>Залучати команду:</strong>
-                            <span>Бригадири, адміністратори, медсестраи спільно оцінюють реальні терміни</span>
+                            <span>Старша медсестра, адміністратори, лікарі спільно оцінюють реальні терміни</span>
                         </div>
                     </div>
                     <div class="solution-step">
                         <span class="step-num">2</span>
                         <div>
                             <strong>Аналізувати дані:</strong>
-                            <span>Вивчати, коли клініка найбільш завантажене і розподіляти пацієнти рівномірно</span>
+                            <span>Вивчати, коли клініка найбільш завантажена і розподіляти пацієнтів рівномірно</span>
                         </div>
                     </div>
                     <div class="solution-step">
@@ -8245,7 +8339,7 @@
                 <div class="task-wrong">
                     <span class="task-label wrong">✕ Як зазвичай:</span>
                     <div class="task-example">
-                        <p>"Розберися з партією №347"</p>
+                        <p>"Подзвони пацієнту Іванову"</p>
                     </div>
                     <div class="task-problems">
                         <span>Незрозуміло що зробити</span>
@@ -8259,10 +8353,10 @@
                 <div class="task-right">
                     <span class="task-label right">✓ Як правильно:</span>
                     <div class="task-example correct">
-                        <p><strong>Завдання:</strong> Перевірити прийом №347 на відповідність плану лікування</p>
-                        <p><strong>Результат:</strong> Звіт перевірки + фото в систему</p>
+                        <p><strong>Завдання:</strong> Подзвонити пацієнту Іванову і записати на повторний огляд</p>
+                        <p><strong>Результат:</strong> Пацієнт записаний в CRM на конкретну дату</p>
                         <p><strong>Дедлайн:</strong> Сьогодні до 15:00</p>
-                        <p><strong>Якщо відхилення:</strong> Оформити записку лікарю</p>
+                        <p><strong>Якщо не відповів:</strong> Надіслати SMS + повторний дзвінок завтра о 10:00</p>
                     </div>
                 </div>
             </div>
@@ -8425,8 +8519,25 @@
 
             <div class="finance-content">
                 <div class="finance-problem">
-                    <h4>Проблема:</h4>
-                    <p>Працівники часто переоцінюють прибуток клініки, не розуміючи реальних витрат: витратні матеріали, оренда, медичне обладнання, енергія, логістика.</p>
+                    <h4>Коли цього немає:</h4>
+                    <div class="pain-consequences">
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Не знаєте реальну рентабельність кожної послуги</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Гроші "десь є", але на рахунку пусто</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Лікарі вимагають підвищення, не розуміючи витрат</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Рішення "на око" — інвестуєте в збиткові напрямки</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="finance-solution">
@@ -8468,13 +8579,30 @@
             </div>
 
             <div class="marketing-content">
-                <div class="marketing-intro">
-                    <p>Різні пацієнти приходять з різними запитами: одним потрібні великі прийоми з мінімальною ціною, іншим — швидкість виконання, третім — унікальна якість.</p>
-                    <p class="highlight-text">Якщо ігнорувати ці особливості — маркетинг не працює.</p>
+                <div class="marketing-problem">
+                    <h4>Коли цього немає:</h4>
+                    <div class="pain-consequences">
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Пацієнти тільки за "сарафаном" — нема росту</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Реклама "в нікуди" — бюджет зливається</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Приходять "не ті" пацієнти — торгуються, скаржаться</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Залежність від сезону — то густо, то пусто</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="marketing-steps">
-                    <h4>Ефективність починається із сегментації:</h4>
+                    <h4>Рішення — системний маркетинг:</h4>
                     <div class="marketing-step-cards">
                         <div class="marketing-step">
                             <span class="step-num">1</span>
@@ -8492,7 +8620,7 @@
                 </div>
 
                 <div class="marketing-result">
-                    <p><strong>Результат:</strong> оптимізація бюджету, емоційний зв'язок з пацієнтами, перетворення разових замовників на постійних партнерів.</p>
+                    <p><strong>Результат:</strong> стабільний потік пацієнтів, оптимізація бюджету, перетворення разових візитів на постійних клієнтів.</p>
                 </div>
             </div>
 
@@ -8513,8 +8641,25 @@
 
             <div class="sales-content">
                 <div class="sales-problem">
-                    <h4>Проблема:</h4>
-                    <p>Власник знає, як презентувати продукцію і закривати угоди. Але <strong>менеджери не вміють продавати так само</strong>.</p>
+                    <h4>Коли цього немає:</h4>
+                    <div class="pain-consequences">
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Пацієнти йдуть "подумати" і не повертаються</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Адміністратори не вміють записувати на лікування</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Лікарі соромляться говорити про гроші</span>
+                        </div>
+                        <div class="pain-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                            <span>Конверсія консультацій 20-30% замість 60-70%</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sales-solution">
@@ -8525,8 +8670,8 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                             </div>
                             <div>
-                                <h5>Скрипти продажів</h5>
-                                <p>Чіткі інструкції: як спілкуватися, що пропонувати, як закривати заперечення</p>
+                                <h5>Скрипти консультацій</h5>
+                                <p>Чіткі інструкції: як презентувати план, називати ціну, закривати заперечення</p>
                             </div>
                         </div>
                         <div class="sales-card">
@@ -8535,14 +8680,14 @@
                             </div>
                             <div>
                                 <h5>Аналіз від AI</h5>
-                                <p>Визначає слабкі місця в переговорах і дає рекомендації</p>
+                                <p>Визначає слабкі місця в консультаціях і дає рекомендації</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="sales-result">
-                    <p><strong>Результат:</strong> менеджери продають впевнено як власник, конверсія зростає, пацієнти отримують кращий сервіс.</p>
+                    <p><strong>Результат:</strong> адміністратори записують як власник, лікарі презентують впевнено, конверсія зростає до 60-70%.</p>
                 </div>
             </div>
 
